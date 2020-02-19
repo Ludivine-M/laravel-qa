@@ -2,7 +2,7 @@
 <a title="Mark this model as best model" class="{{ $model->status }} mt-2" onclick="event.preventDefault(); document.getElementById('accept-model-{{ $model->id }}').submit();">
     <i class="fa fa-check fa-2x"></i>
 </a>
-<form id="accept-model-{{ $model->id }}" action="{{ route('models.accept', $model->id) }}" method="POST" style="display:none;">
+<form id="accept-model-{{ $model->id }}" action="{{ route('answers.accept', $model->id) }}" method="POST" style="display:none;">
     @csrf
 </form>
 @else
