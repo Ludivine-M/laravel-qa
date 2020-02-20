@@ -56,6 +56,15 @@ class AnswersController extends Controller
             'body' => 'required',
         ]));
 
+        //with vue we return a json response:
+        if ($request->expectsJson()) {
+            return response()->json([
+                'message' => 'Your answer has been updated',
+                'body_html' => $answer->body_html
+            ]);
+        }
+
+        //with laravel: 
         return redirect()->route('questions.show', $question->slug)->with('success', 'Your answer has been updated');
     }
 
