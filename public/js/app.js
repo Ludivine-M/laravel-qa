@@ -11300,6 +11300,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Answer_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Answer.vue */ "./resources/js/components/Answer.vue");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+//
+//
+//
 //
 //
 //
@@ -11319,10 +11330,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['answers', 'count'],
+  props: ["question"],
+  data: function data() {
+    return {
+      questionId: this.question.id,
+      count: this.question.answers_count,
+      answers: [],
+      nextUrl: null
+    };
+  },
+  created: function created() {
+    this.fetch("/questions/".concat(this.questionId, "/answers"));
+  },
+  methods: {
+    fetch: function fetch(endpoint) {
+      var _this = this;
+
+      axios.get(endpoint).then(function (_ref) {
+        var _this$answers;
+
+        var data = _ref.data;
+
+        (_this$answers = _this.answers).push.apply(_this$answers, _toConsumableArray(data.data));
+
+        _this.nextUrl = data.next_page_url;
+      });
+    }
+  },
   computed: {
     title: function title() {
-      return this.count + " " + (this.count > 1 ? 'Answers' : 'Answer');
+      return this.count + " " + (this.count > 1 ? "Answers" : "Answer");
     }
   },
   components: {
@@ -47771,7 +47808,25 @@ var render = function() {
                     key: answer.id,
                     attrs: { answer: answer }
                   })
-                })
+                }),
+                _vm._v(" "),
+                _vm.nextUrl
+                  ? _c("div", { staticClass: "text-center mt-3" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-outline-secondary",
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.fetch(_vm.nextUrl)
+                            }
+                          }
+                        },
+                        [_vm._v("Load more answers")]
+                      )
+                    ])
+                  : _vm._e()
               ],
               2
             )
