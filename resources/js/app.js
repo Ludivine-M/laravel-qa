@@ -24,9 +24,8 @@ Vue.use(Authorization);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('user-info', require('./components/UserInfo.vue').default);
-Vue.component('vote', require('./components/Vote.vue').default);
-Vue.component('answers', require('./components/Answers.vue').default);
+
+Vue.component('question-page', require('./pages/QuestionPage.vue').default);
 
 
 const app = new Vue({
