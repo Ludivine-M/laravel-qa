@@ -12,6 +12,8 @@ Visitors can browse questions and see answers. Authenticated users can ask a que
 
 ## Development
 
-I'm currently working on this project. The Laravel only version is ready online at https://a-laravel-qa.herokuapp.com/
-I am now working on integrating Vue.js to the Laravel project. 
+I'm currently working on this project. 
+The Laravel only version is ready online at https://a-laravel-qa.herokuapp.com/
+The same application upgraded with Vue.js is available here: https://a-laravue-qa.herokuapp.com/
+I am now working on building a Vue.js Single Page Application connecting to the Laravel RESTful API. 
 
