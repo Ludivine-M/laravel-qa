@@ -12,10 +12,11 @@
         "doctrine/dbal": "^2.10",
         "erusev/parsedown": "^1.7",
         "fideloper/proxy": "^4.0",
+        "fzaninotto/faker": "^1.9.1",
         "laravel/framework": "^6.2",
+        "laravel/passport": "^8.4",
         "laravel/tinker": "^2.0",
-        "mews/purifier": "^3.1",
-        "fzaninotto/faker": "^1.9.1"
+        "mews/purifier": "^3.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
