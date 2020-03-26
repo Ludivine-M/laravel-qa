@@ -15,5 +15,6 @@ Visitors can browse questions and see answers. Authenticated users can ask a que
 I'm currently still working on this project.  
 The Laravel only version is ready online at https://a-laravel-qa.herokuapp.com/   
 The same application upgraded with Vue.js is available here: https://a-laravue-qa.herokuapp.com/   
-I am now working on building a Vue.js Single Page Application connecting to the Laravel RESTful API.   
+I am now working on building a Vue.js Single Page Application connecting to the Laravel RESTful API. 
+I have created several API endpoints that will be consumed by the Single Page Application I am currently developping with Vue.js
 
