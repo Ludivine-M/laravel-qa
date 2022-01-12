@@ -21,7 +21,7 @@
         "jquery": "^3.2",
         "laravel-mix": "^5.0.4",
         "lodash": "^4.17.13",
-        "markdown-it": "^10.0.0",
+        "markdown-it": "^12.3.2",
         "markdown-it-prism": "^2.0.5",
         "npm": "^6.14.4",
         "popper.js": "^1.12",
